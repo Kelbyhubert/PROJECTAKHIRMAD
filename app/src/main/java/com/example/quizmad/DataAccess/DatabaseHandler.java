@@ -18,7 +18,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //wellplay
     //tes
     //wibu
-
+    // pantat
     private static final String TAG = "DatabaseHandler";
 
     public static final String DATABASE_NAME = "BLUE_DOLL_DATABASE";
