@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModifyDollActivity">
+
+    <EditText
+        android:id="@+id/dollNameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Doll Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editForm" />
+
+    <EditText
+        android:id="@+id/descriptionModify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/dollNameField"
+        app:layout_constraintStart_toStartOf="@+id/dollNameField"
+        app:layout_constraintTop_toBottomOf="@+id/dollNameField" />
+
+    <Spinner
+        android:id="@+id/imageSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/descriptionModify"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Image"
+        app:layout_constraintStart_toStartOf="@+id/descriptionModify"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionModify" />
+
+    <TextView
+        android:id="@+id/editForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Doll Form"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="92dp"
+        android:text="Save"
+        app:layout_constraintStart_toStartOf="@+id/imageSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/imageSpinner" />
+
+    <Button
+        android:id="@+id/deleteButtonEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        app:layout_constraintBaseline_toBaselineOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageSpinner"
+        app:layout_constraintStart_toEndOf="@+id/saveButton" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doll Name"
+        app:layout_constraintBottom_toTopOf="@+id/dollNameField"
+        app:layout_constraintStart_toStartOf="@+id/dollNameField" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionModify"
+        app:layout_constraintStart_toStartOf="@+id/descriptionModify" />
+</androidx.constraintlayout.widget.ConstraintLayout>
