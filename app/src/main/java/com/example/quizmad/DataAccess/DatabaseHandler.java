@@ -13,7 +13,7 @@ import com.example.quizmad.model.UserModel;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    //tes
+    //dor
     private static final String TAG = "DatabaseHandler";
 
     public static final String DATABASE_NAME = "BLUE_DOLL_DATABASE";
