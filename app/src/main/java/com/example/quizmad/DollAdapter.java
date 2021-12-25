@@ -58,7 +58,7 @@ public class DollAdapter extends ArrayAdapter<DollModel> {
 
         dollImage.setImageResource(doll.getDollImage());
         dollName.setText(doll.getDollName());
-        dollCreator.setText(doll.getCreatorName());
+        dollCreator.setText(doll.getDollOwner().getUsername());
         dollDesc.setText(doll.getDescription());
 
 
@@ -93,7 +93,7 @@ public class DollAdapter extends ArrayAdapter<DollModel> {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if("Admin".equals(DummyData.getRole()) || doll.getCreatorName().equals(DummyData.getUserName())){
+                if("Admin".equals(DummyData.getRole()) || doll.getDollOwner().getUsername().equals(DummyData.getUserName())){
                     DummyData.removeDoll(doll);
                     Intent i = new Intent(context,MainActivity.class);
                     i.putExtra("done" , "done");
