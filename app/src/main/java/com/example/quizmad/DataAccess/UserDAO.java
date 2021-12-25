@@ -55,6 +55,7 @@ public class UserDAO {
         contentValues.put(DatabaseHandler.USERNAME_KEY,user.getUsername());
         contentValues.put(DatabaseHandler.PASSWORD_KEY, user.getUserPassword());
         contentValues.put(DatabaseHandler.GENDER_KEY, user.getUserGender());
+        contentValues.put(DatabaseHandler.EMAIL_KEY, user.getUserEmail());
         contentValues.put(DatabaseHandler.ROLE_KEY, user.getUserRole());
 
         db.insert(DatabaseHandler.USER_TABLE, null, contentValues);

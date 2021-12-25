@@ -1,5 +1,6 @@
 package com.example.quizmad.DataAccess;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.example.quizmad.R;
@@ -7,6 +8,7 @@ import com.example.quizmad.model.DollModel;
 import com.example.quizmad.model.UserModel;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class DummyData {
 
@@ -112,6 +114,20 @@ public class DummyData {
             newUserId = "ST" + (lastId + 1);
         }
         return newUserId;
+    }
+
+    public static void insertUserEarlyData(Context context){
+        UserDAO userDAO = new UserDAO(context);
+        userDAO.userRegister(new UserModel("US001", "Admin", "Admin@email.com", "Admin","Male","Admin"));
+        userDAO.userRegister(new UserModel("US002", "Kelby", "Kelby@email.com", "123","Male","User"));
+        userDAO.userRegister(new UserModel("US003", "Johanes", "Johanes@email.com", "123","Male","User"));
+    }
+
+    public static void insertDollEarlyData(Context context){
+        DollDAO dollDAO = new DollDAO(context);
+        dollDAO.insertNewDoll(new DollModel(R.drawable.doll2,"doll",new UserModel("US001", "Admin", "Admin@email.com", "Admin","Male","Admin"),"doll 1", UUID.randomUUID().toString()));
+        dollDAO.insertNewDoll(new DollModel(R.drawable.download,"doll",new UserModel("US001", "Admin", "Admin@email.com", "Admin","Male","Admin"),"doll 2",UUID.randomUUID().toString()));
+        dollDAO.insertNewDoll(new DollModel(R.drawable.doll3,"doll",new UserModel("US001", "Admin", "Admin@email.com", "Admin","Male","Admin"),"doll 3",UUID.randomUUID().toString()));
     }
 
 

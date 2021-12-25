@@ -63,7 +63,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 EMAIL_KEY + " TEXT NOT NULL," +
                 PASSWORD_KEY + " TEXT NOT NULL," +
                 GENDER_KEY + " TEXT NOT NULL," +
-                ROLE_KEY + "TEXT NOT NULL" +
+                ROLE_KEY + " TEXT NOT NULL" +
                 ")";
 
         String dollTable = "CREATE TABLE " + DOLL_TABLE + "(" +

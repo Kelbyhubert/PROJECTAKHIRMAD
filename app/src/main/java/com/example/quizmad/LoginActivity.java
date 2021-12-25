@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizmad.DataAccess.DummyData;
+import com.example.quizmad.DataAccess.UserDAO;
+import com.example.quizmad.context.UserSession;
 import com.example.quizmad.model.UserModel;
 
 import java.util.ArrayList;
@@ -27,11 +29,16 @@ public class LoginActivity extends AppCompatActivity {
     private TextView registerLink;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+//        DummyData.insertUserEarlyData(getApplicationContext());
+//        DummyData.insertDollEarlyData(getApplicationContext());
 
         init();
         if(getIntent().getExtras() == null){
@@ -55,22 +62,20 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 Log.d(TAG,""+ DummyData.getDummyUserList());
-                for(UserModel user : DummyData.getDummyUserList()){
-                    if(user.getUserEmail().equals(emailField.getText().toString().trim()) && user.getUserPassword().equals(passwordField.getText().toString().trim())){
 
-                        DummyData.setUserName(user.getUsername());
-                        DummyData.setRole(user.getUserRole());
-                        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(i);
-                        finish();
-                        return;
+                UserModel user = new UserDAO(getApplicationContext()).userLogin(emailField.getText().toString(), passwordField.getText().toString());
 
-                    }
+                if(user == null){
+                    Toast.makeText(getApplicationContext(), "Email or Password is wrong" , Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-                Toast.makeText(getApplicationContext(), "Email or Password is wrong" , Toast.LENGTH_SHORT).show();
-                return;
+                // auth disini
+                new UserSession(getApplicationContext()).createUserSession(user);
 
+                // intent disini
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
 
             }
         });
