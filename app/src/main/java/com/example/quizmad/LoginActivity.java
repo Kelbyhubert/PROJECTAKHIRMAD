@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        DummyData.insertUserEarlyData(getApplicationContext());
-        DummyData.insertDollEarlyData(getApplicationContext());
+//        DummyData.insertUserEarlyData(getApplicationContext());
+//        DummyData.insertDollEarlyData(getApplicationContext());
 
         SharedPreferences preferences = getSharedPreferences(UserSession.SESSION_NAME, Context.MODE_PRIVATE);
         if(preferences.getString(UserSession.SESSION_USER_ID,null) != null){
