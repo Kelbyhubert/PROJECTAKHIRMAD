@@ -93,9 +93,8 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.locationMenu:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_view,AboutUs.class,null)
-                        .commit();
+                Intent i = new Intent(getApplicationContext(),AboutUsActivity.class);
+                startActivity(i);
                 break;
         }
         return true;
