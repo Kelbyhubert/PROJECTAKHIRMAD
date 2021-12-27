@@ -13,6 +13,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class AboutUsActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private GoogleMap mMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,30 @@ public class AboutUsActivity extends AppCompatActivity implements OnMapReadyCall
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng myPos = new LatLng(-0.3026955986450043, 100.3662802839505);
-        googleMap.addMarker(new MarkerOptions().position(myPos).title("Rocky Hotel"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(myPos));
+        mMap = googleMap;
+
+        double LatAnggrek = Double.parseDouble(MainActivity.maps.get(0).getLat());
+        double LngAnggrek = Double.parseDouble(MainActivity.maps.get(0).getLng());
+
+        LatLng anggrek = new LatLng(LatAnggrek, LngAnggrek);
+        mMap.addMarker(new MarkerOptions().position(anggrek).title(MainActivity.maps.get(0).getName()));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(anggrek));
+
+        double LatSyahdan = Double.parseDouble(MainActivity.maps.get(1).getLat());
+        double LngSyahdan = Double.parseDouble(MainActivity.maps.get(1).getLng());
+
+
+        LatLng syahdan = new LatLng(LatSyahdan, LngSyahdan);
+        mMap.addMarker(new MarkerOptions().position(syahdan).title(MainActivity.maps.get(1).getName()));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(syahdan));
+
+
+        double LatKijang = Double.parseDouble(MainActivity.maps.get(2).getLat());
+        double LngKijang = Double.parseDouble(MainActivity.maps.get(2).getLng());
+
+
+        LatLng kijang = new LatLng(LatKijang, LngKijang );
+        mMap.addMarker(new MarkerOptions().position(kijang).title(MainActivity.maps.get(2).getName()));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(kijang));
     }
 }
