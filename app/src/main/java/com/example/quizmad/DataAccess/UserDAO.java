@@ -71,7 +71,7 @@ public class UserDAO {
         Cursor cursor = db.rawQuery("SELECT " + DatabaseHandler.USER_ID_KEY + " FROM " + DatabaseHandler.USER_TABLE, null);
 
         if(cursor == null){
-            return null;
+            return "ST001";
         }
 
         if(cursor.moveToLast()){
