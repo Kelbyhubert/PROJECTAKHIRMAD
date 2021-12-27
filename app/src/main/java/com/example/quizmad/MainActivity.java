@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.quizmad.DataAccess.DummyData;
+import com.example.quizmad.context.UserSession;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.logoutMenu:
+                        new UserSession(getApplicationContext()).destroySession();
                         Intent i = new Intent(getApplicationContext(),LoginActivity.class);
                         startActivity(i);
                         finish();

@@ -24,7 +24,7 @@ public class DollDAO {
 
     // buat masukin doll baru
 
-    public void insertNewDoll(DollModel doll){
+    public boolean insertNewDoll(DollModel doll){
         SQLiteDatabase db = databaseHandler.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -34,13 +34,18 @@ public class DollDAO {
         contentValues.put(DatabaseHandler.DOLl_IMAGE_KEY,doll.getDollImage());
         contentValues.put(DatabaseHandler.USER_ID_KEY, doll.getDollOwner().getUserUID());
 
-        db.insert(DatabaseHandler.DOLL_TABLE, null , contentValues);
+        Long newRowId =  db.insert(DatabaseHandler.DOLL_TABLE, null , contentValues);
         db.close();
+        if(newRowId != null){
+            return true;
+        }
+
+        return false;
     }
 
     // buat update doll
 
-    public void modifyDoll(DollModel doll){
+    public boolean modifyDoll(DollModel doll){
         SQLiteDatabase db = databaseHandler.getWritableDatabase();
 
         // masukan semua data doll ke contentvalue dulu
@@ -54,8 +59,13 @@ public class DollDAO {
         String[] selectionArgs = {doll.getDollUID()};
 
         // jika dijadiin query = UPDATE DOLL_TABLE SET DOLL_NAME = doll.getDollname() dan seterusnya WHERE DOLL_ID = doll.getDollUID
-        db.update(DatabaseHandler.DOLL_TABLE,contentValues, selections, selectionArgs);
+        int totalUpdate =  db.update(DatabaseHandler.DOLL_TABLE,contentValues, selections, selectionArgs);
         db.close();
+        if(totalUpdate > 0){
+            return true;
+        }
+
+        return false;
 
     }
 

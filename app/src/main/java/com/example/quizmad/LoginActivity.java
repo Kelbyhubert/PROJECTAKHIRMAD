@@ -2,7 +2,9 @@ package com.example.quizmad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -40,10 +42,14 @@ public class LoginActivity extends AppCompatActivity {
 //        DummyData.insertUserEarlyData(getApplicationContext());
 //        DummyData.insertDollEarlyData(getApplicationContext());
 
-        init();
-        if(getIntent().getExtras() == null){
-            DummyData.initData();
+        SharedPreferences preferences = getSharedPreferences(UserSession.SESSION_NAME, Context.MODE_PRIVATE);
+        if(preferences.getString(UserSession.SESSION_USER_ID,null) != null){
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
         }
+
+        init();
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                Log.d(TAG,""+ DummyData.getDummyUserList());
+
 
                 UserModel user = new UserDAO(getApplicationContext()).userLogin(emailField.getText().toString(), passwordField.getText().toString());
 

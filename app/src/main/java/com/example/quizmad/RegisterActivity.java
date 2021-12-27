@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizmad.DataAccess.DummyData;
+import com.example.quizmad.DataAccess.UserDAO;
 import com.example.quizmad.model.UserModel;
 
 import java.util.Calendar;
@@ -101,7 +102,10 @@ public class RegisterActivity extends AppCompatActivity {
                     gender = "Female";
                 }
 
-                DummyData.register(new UserModel(DummyData.UIDGenerator(),username, email , password, gender , "User"));
+                UserDAO userDAO = new UserDAO(getApplicationContext());
+                String newId = userDAO.generateUserUID();
+
+                userDAO.userRegister(new UserModel(newId,username, email , password, gender , "User"));
                 Toast.makeText(getApplicationContext(), "User have been register" , Toast.LENGTH_SHORT).show();
 
             }

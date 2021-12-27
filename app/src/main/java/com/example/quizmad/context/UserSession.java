@@ -14,6 +14,7 @@ public class UserSession {
     public static final String SESSION_NAME = "BLUE_DOLL_SESSION";
     public static final String SESSION_USER_ID = "USER_ID";
     public static final String SESSION_USERNAME = "USERNAME";
+    public static final String SESSION_ROLE = "ROLE";
 
     public UserSession(Context context){
         this.context = context;
@@ -24,7 +25,7 @@ public class UserSession {
     public void createUserSession(UserModel userModel){
         editor.putString(SESSION_USER_ID, userModel.getUserUID());
         editor.putString(SESSION_USERNAME , userModel.getUsername());
-
+        editor.putString(SESSION_ROLE, userModel.getUserRole());
         editor.commit();
     }
 

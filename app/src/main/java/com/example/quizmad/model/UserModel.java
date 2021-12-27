@@ -2,7 +2,7 @@ package com.example.quizmad.model;
 
 import java.io.Serializable;
 
-public class UserModel {
+public class UserModel implements Serializable {
 
     private String userUID;
     private String username;
