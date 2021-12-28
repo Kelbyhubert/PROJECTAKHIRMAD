@@ -5,11 +5,14 @@
 
     <item
         android:id="@+id/viewAllDollMenu"
+        android:icon="@drawable/ic_viewalldolls"
         android:title="View All Doll" />
     <item
         android:id="@+id/insertDollMenu"
+        android:icon="@drawable/ic_inserdolls"
         android:title="Insert Doll" />
     <item
         android:id="@+id/logoutMenu"
+        android:icon="@drawable/ic_logout"
         android:title="Logout" />
 </menu>
