@@ -71,10 +71,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Register here !"
+        android:text="Already have an ccount? Register here!"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/loginButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
