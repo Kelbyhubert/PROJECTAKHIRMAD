@@ -40,4 +40,30 @@
         app:layout_constraintEnd_toEndOf="@+id/dollImageDetail"
         app:layout_constraintStart_toStartOf="@+id/dollImageDetail"
         app:layout_constraintTop_toBottomOf="@+id/dollImageDetail" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="374dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Please input your phone number"
+        android:inputType="phone"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionDetail" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
