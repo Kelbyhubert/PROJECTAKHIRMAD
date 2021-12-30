@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         if(preferences.getString(UserSession.SESSION_USER_ID,null) != null){
             Intent i = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(i);
+            finish();
         }
 
         init();
@@ -82,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 // intent disini
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
+                finish();
 
             }
         });
@@ -92,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
