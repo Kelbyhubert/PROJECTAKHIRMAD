@@ -42,12 +42,5 @@ public class RequestQueueSingleton {
         getRequestQueue().add(req);
     }
 
-    public static class DollDetailViewActivity extends AppCompatActivity {
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.fragment_doll_detail_view);
-        }
-    }
 }
