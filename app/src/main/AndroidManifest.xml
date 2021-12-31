@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizMAD">
-        <activity android:name=".service.RequestQueueSingleton$DollDetailViewActivity" />
+        <activity android:name=".DollDetailViewActivity"></activity>
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

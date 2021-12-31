@@ -81,13 +81,9 @@ public class DollAdapter extends ArrayAdapter<DollModel> {
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("DollName", doll.getDollName());
-                bundle.putString("DollDesc",doll.getDescription());
-                bundle.putInt("DollImage",doll.getDollImage());
-                DollDetailView dollDetailView = new DollDetailView();
-                dollDetailView.setArguments(bundle);
-                ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view,dollDetailView).commit();
+                Intent i = new Intent(context, DollDetailViewActivity.class);
+                i.putExtra("DollObject", doll);
+                context.startActivity(i);
             }
         });
 
