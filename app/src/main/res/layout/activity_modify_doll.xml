@@ -71,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="92dp"
+        android:backgroundTint="@color/blue"
         android:text="Save"
         app:layout_constraintStart_toStartOf="@+id/imageSpinner"
         app:layout_constraintTop_toBottomOf="@+id/imageSpinner" />
@@ -79,6 +80,7 @@
         android:id="@+id/deleteButtonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
         android:text="Delete"
         app:layout_constraintBaseline_toBaselineOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="@+id/imageSpinner"
