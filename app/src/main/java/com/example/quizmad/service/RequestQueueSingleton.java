@@ -1,10 +1,14 @@
 package com.example.quizmad.service;
 
 import android.content.Context;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.example.quizmad.R;
 
 public class RequestQueueSingleton {
 
@@ -36,5 +40,14 @@ public class RequestQueueSingleton {
 
     public <T> void addToRequestQueue(Request<T> req) {
         getRequestQueue().add(req);
+    }
+
+    public static class DollDetailViewActivity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.fragment_doll_detail_view);
+        }
     }
 }
